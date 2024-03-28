@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8954F09B-CB2F-485F-9E35-C0DDC1377877}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>setJunior</RootNamespace>
+    <AssemblyName>setJunior</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\kylin\Downloads\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\cute-astronaut-riding-rocket-waving-hand-cartoon-icon-illustration-science-technology-icon-concept_138676-2130-removebg-preview.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0E63E6487CE7F0C7CFC36C415428C3E1552BBFDB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>setJunior_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.1.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ProfanityFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Profanity.Detector.0.1.8\lib\netstandard2.0\ProfanityFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet.Async, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Renci.SshNet.Async.1.4.0\lib\net40\Renci.SshNet.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>packages\SharpDX.XAudio2.4.2.0\lib\net45\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acknoledgements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acknoledgements.Designer.cs">
+      <DependentUpon>Acknoledgements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addToLeaderboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addToLeaderboard.Designer.cs">
+      <DependentUpon>addToLeaderboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Astronimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Astronimo.Designer.cs">
+      <DependentUpon>Astronimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customization.Designer.cs">
+      <DependentUpon>Customization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HowToPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowToPlay.Designer.cs">
+      <DependentUpon>HowToPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LeaderboardEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaderboardEditor.Designer.cs">
+      <DependentUpon>LeaderboardEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Leaderboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leaderboard.Designer.cs">
+      <DependentUpon>Leaderboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPS.Designer.cs">
+      <DependentUpon>RPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Story.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Story.Designer.cs">
+      <DependentUpon>Story.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toysTreats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="toysTreats.Designer.cs">
+      <DependentUpon>toysTreats.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Acknoledgements.resx">
+      <DependentUpon>Acknoledgements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addToLeaderboard.resx">
+      <DependentUpon>addToLeaderboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Astronimo.resx">
+      <DependentUpon>Astronimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customization.resx">
+      <DependentUpon>Customization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowToPlay.resx">
+      <DependentUpon>HowToPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leaderboard.resx">
+      <DependentUpon>Leaderboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPS.resx">
+      <DependentUpon>RPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Story.resx">
+      <DependentUpon>Story.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toysTreats.resx">
+      <DependentUpon>toysTreats.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="setJunior_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weedbob weedpants.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trololol.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinkElephant.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinkElephant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1R1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1BLUE3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1RED3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1RED2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1BLUE2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1RED1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2RED3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2BLUE3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2BLUE2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2RED2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2RED1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2BLUE1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3BLUE%283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3RED%283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3RED%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3BLUE%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3BLUE%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3RED%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3YELLOW%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3YELLOW%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3YELLOW%283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2YELLOW%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2YELLOW%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2YELLOW3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW%283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spacemansam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alienship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storymini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leaderboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpbw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\award.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipalien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alienship2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien3RED_3_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien2RED2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1RED1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlienCrew.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled design %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlienCrew-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Funk Game Loop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laserrocket-5984.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\takeoff2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\takeoff.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speechbubbke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\template.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditsButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StoryButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LeaderboardButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mutemusic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mute_Music-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mute_Music__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1BLUE1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unmute SFX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mute SFX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuitButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canvas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChillandSet.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leaderboard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spacemansam1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatarsTxt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setlogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SetWarsLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localNames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localScores.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SamJunior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Not-an-alienNfordatrc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SussyAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassicalMusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClassicalMusic1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SusMusic.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SusMusic1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Astronimo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AstronimoButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PAPER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ROCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SCISSORS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Astronimo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUZZ2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1YELLOW%283%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1BLUE31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drum Roll - Sound Effect %28HD%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\difficulties.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RULES.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alien1RED3-removebg-preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\story.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cute-astronaut-riding-rocket-waving-hand-cartoon-icon-illustration-science-technology-icon-concept_138676-2130-removebg-preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leaderboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat-kitten2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wanted_-Super-Mario-64-DS-OST.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MEOW.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SusMusic2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The Lift.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\06-Damiano-Baldoni-Charlotte%28chosic.com%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speech Bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speech Bubble %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storeng.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
